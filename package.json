@@ -10,6 +10,7 @@
     "url": "git+https://github.com/htmoia/ionic-6-image-loader"
   },
   "scripts": {
+    "prepare": "npm run prebuild && npm run build",
     "prebuild": "rimraf dist aot",
     "build": "ngc",
     "lint": "eslint \"src/**/*.ts\"",
