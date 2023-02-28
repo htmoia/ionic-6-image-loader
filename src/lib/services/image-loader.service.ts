@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {File, FileEntry} from '@ionic-native/file/ngx';
-import {WebView} from '@ionic-native/ionic-webview/ngx';
+import {File, FileEntry} from '@awesome-cordova-plugins/file/ngx';
+import {WebView} from '@awesome-cordova-plugins/ionic-webview/ngx';
 import {Platform} from '@ionic/angular';
 import {fromEvent, Subject} from 'rxjs';
 import {filter, first, take} from 'rxjs/operators';
@@ -108,8 +108,8 @@ export class ImageLoaderService {
     private get isWKWebView(): boolean {
         return (
             this.platform.is('ios') &&
-            (<any> window).webkit &&
-            (<any> window).webkit.messageHandlers
+            (<any>window).webkit &&
+            (<any>window).webkit.messageHandlers
         );
     }
 
@@ -119,7 +119,7 @@ export class ImageLoaderService {
             //  Otherwise the logic for copying to tmp under IOS will fail.
             (this.platform.is('android') && this.webview) ||
             (this.platform.is('android')) && (location.host === 'localhost:8080') ||
-            (<any> window).LiveReload);
+            (<any>window).LiveReload);
     }
 
     private get isDevServer(): boolean {

@@ -1,10 +1,18 @@
 {
   "name": "ionic-6-image-loader",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "ionic-image-loader for Ionic v6",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/htmoia/ionic-6-image-loader"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist aot",
+    "build": "ngc",
+    "lint": "eslint \"src/**/*.ts\"",
+    "publish": "npm run prebuild && npm run build && npm publish"
   },
   "keywords": [
     "ionic6",
@@ -21,11 +29,24 @@
     "@angular/forms": "~15.0.4",
     "@angular/platform-browser": "~15.0.4",
     "@angular/platform-browser-dynamic": "~15.0.4",
+    "@angular/router": "~15.0.4",
     "@awesome-cordova-plugins/core": "~6.3.0",
     "@awesome-cordova-plugins/file": "~6.3.0",
+    "@awesome-cordova-plugins/ionic-webview": "~6.3.0",
+    "@ionic/angular": "~6.5.6",
+    "@types/jasmine": "3.10.3",
+    "@types/jasminewd2": "2.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
     "codelyzer": "~6.0.2",
+    "eslint": "~8.35.0",
+    "jasmine": "~4.5.0",
+    "jasmine-core": "~4.5.0",
+    "jasmine-spec-reporter": "~7.0.0",
+    "rimraf": "~4.1.2",
     "rxjs": "~7.8.0",
     "tslib": "~2.5.0",
+    "typescript": "~4.8.4",
     "zone.js": "~0.12.0"
   },
   "peerDependencies": {
