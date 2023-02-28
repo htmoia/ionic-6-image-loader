@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "ionic-image-loader for Ionic v6",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
