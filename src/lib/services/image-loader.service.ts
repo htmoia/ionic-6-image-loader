@@ -1,7 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {File, FileEntry} from '@awesome-cordova-plugins/file/ngx';
-import {WebView} from '@awesome-cordova-plugins/ionic-webview/ngx';
 import {Platform} from '@ionic/angular';
 import {fromEvent, Subject} from 'rxjs';
 import {filter, first, take} from 'rxjs/operators';
@@ -64,8 +63,7 @@ export class ImageLoaderService {
         private config: ImageLoaderConfigService,
         private file: File,
         private http: HttpClient,
-        private platform: Platform,
-        private webview: WebView,
+        private platform: Platform
     ) {
         if (!platform.is('cordova')) {
             // we are running on a browser, or using livereload
@@ -117,7 +115,6 @@ export class ImageLoaderService {
         return (
             //  Important: isWKWebview && isIonicWKWebview must be mutually excluse.
             //  Otherwise the logic for copying to tmp under IOS will fail.
-            (this.platform.is('android') && this.webview) ||
             (this.platform.is('android')) && (location.host === 'localhost:8080') ||
             (<any>window).LiveReload);
     }
@@ -616,10 +613,6 @@ export class ImageLoaderService {
         // Use Ionic normalizeUrl to generate the right URL for Ionic WKWebView
         if (Ionic && typeof Ionic.normalizeURL === 'function') {
             return Ionic.normalizeURL(fileEntry.nativeURL);
-        }
-        // use new webview function to do the trick
-        if (this.webview) {
-            return this.webview.convertFileSrc(fileEntry.nativeURL);
         }
         return fileEntry.nativeURL;
     }

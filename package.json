@@ -10,7 +10,7 @@
     "url": "git+https://github.com/htmoia/ionic-6-image-loader"
   },
   "scripts": {
-    "prepare": "npm run prebuild && npm run build",
+    "prepare": "npm run build",
     "prebuild": "rimraf dist aot",
     "build": "ngc",
     "lint": "eslint \"src/**/*.ts\"",
@@ -34,7 +34,6 @@
     "@angular/router": "~15.0.4",
     "@awesome-cordova-plugins/core": "~6.3.0",
     "@awesome-cordova-plugins/file": "~6.3.0",
-    "@awesome-cordova-plugins/ionic-webview": "~6.3.0",
     "@ionic/angular": "~6.5.6",
     "@types/jasmine": "3.10.3",
     "@types/jasminewd2": "2.0.10",
