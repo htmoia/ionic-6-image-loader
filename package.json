@@ -1,6 +1,6 @@
 {
   "name": "ionic-6-image-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ionic-image-loader for Ionic v6",
   "main": "dist/index.js",
   "module": "dist/index.js",
